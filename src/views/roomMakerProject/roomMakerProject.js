@@ -39,20 +39,20 @@ const RoomMakerProject = () => {
         getTotalInfo({ roomId, userId });   
         getGrwthxInfo({ roomId, userId });
         if (userId) {
-            // let url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}&devmode=jobyDevMode`;
-            let url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}`;
+            let url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}&devmode=jobyDevMode`;
+            // let url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}`;
             if (!!startobj && (startobj !== 'undefined')) {
-                // url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}&startobj=${startobj}&devmode=jobyDevMode`;
-                url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}&startobj=${startobj}`;
+                url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}&startobj=${startobj}&devmode=jobyDevMode`;
+                // url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}&startobj=${startobj}`;
             }
             // const url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}`;
             setRoomUrl(url);
         } else {
-            // let url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}&devmode=jobyDevMode`;
-            let url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}`;
+            let url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}&devmode=jobyDevMode`;
+            // let url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}`;
             if (!!startobj && (startobj !== 'undefined')) {
-                // url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}&startobj=${startobj}&devmode=jobyDevMode`;
-                url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}&startobj=${startobj}`;
+                url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}&startobj=${startobj}&devmode=jobyDevMode`;
+                // url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}&startobj=${startobj}`;
             }
             // const url = `https://play.grwth.hk/?roomId=${roomId}&userId=${userId}`;
             setRoomUrl(url);

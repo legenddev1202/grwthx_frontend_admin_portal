@@ -59,8 +59,10 @@ const PlayPreview = () => {
     },[infoGrwthResponse])
     
     window.addEventListener('message', function(event) {
+        console.log("=========", event.data);
+        console.log("=========", event.channel);
+        this.window.location.href = "https//grwthx.grwth.hk";
         if( event.data.channel === "playmode"){
-            this.window.location.href = "https//grwthx.grwth.hk";
         }
     });
     
