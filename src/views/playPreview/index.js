@@ -67,7 +67,7 @@ const PlayPreview = () => {
     
     return (
         <>
-            <PreviewIframe src={roomUrl} same-origin-allow />
+            <PreviewIframe src={roomUrl} same-origin-allow allow="camera; microphone; sound" />
         </>
     )
         
