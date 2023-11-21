@@ -158,6 +158,17 @@ const MainLayout = () => {
                 <Outlet />
             )}
             {/* <Customization /> */}
+            
+            <df-messenger
+            location="us-central1"
+            project-id="playgame1-5a5f9"
+            agent-id="e7e100a9-565e-49f4-8f97-ca8e4781520f"
+            language-code="en">
+                <df-messenger-chat-bubble
+                chat-title="Chat Bot">
+                </df-messenger-chat-bubble>
+            </df-messenger>
+
 
         </Box>
     );
