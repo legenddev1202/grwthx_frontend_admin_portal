@@ -75,6 +75,7 @@ const Header = ({ data, userId, roomId, assignmentId, postMessage }) => {
     const [openUsersPop, setOpenUsersPop] = useState();
     const [openGradePop, setOpenGradePop] = useState();
     const [mark, setMark] = useState('');
+    const [loadFlag, setLoadFlag] = useState(false);
 
     const handleOpen = (event) => {
         setOpen(event.currentTarget);
@@ -201,6 +202,14 @@ const Header = ({ data, userId, roomId, assignmentId, postMessage }) => {
         })
         setOpenTitleChange(false);
     }
+
+    window.addEventListener('message', function(event) {
+        const channeldata = event?.data;
+        if (channeldata === "loadedroom") {
+            setLoadFlag(true);
+        }
+    });
+
     return (
         <>
             {
@@ -513,19 +522,29 @@ const Header = ({ data, userId, roomId, assignmentId, postMessage }) => {
                                 </Button>
                             </Box>
                         )}
-                        <Box onClick={() => postMessage(ROOM_SAVE_MESSAGE)}>
-                            <SaveIcon sx={{ color: '#ffffff', width: '35px', height: '35px' }} />
-                        </Box>
-                        <Box
-                            onClick={() => handleGoPlayPreview(ROOM_PREVIEW_MESSAGE)}
-                        >
-                            <VisibilityIcon sx={{ color: '#ffffff', width: '35px', height: '35px' }} />
-                        </Box>
-                        <Box
-                            onClick={() => handleGoPlayPreview(ROOM_PLAY_MESSAGE)}
-                        >
-                            <PlayArrowIcon sx={{ color: '#ffffff', width: '35px', height: '35px' }} />
-                        </Box>
+
+                        {
+                            loadFlag && 
+                                <Box onClick={() => postMessage(ROOM_SAVE_MESSAGE)}>
+                                    <SaveIcon sx={{ color: '#ffffff', width: '35px', height: '35px' }} />
+                                </Box>
+                        }
+                        {
+                             loadFlag && 
+                                <Box
+                                    onClick={() => handleGoPlayPreview(ROOM_PREVIEW_MESSAGE)}
+                                >
+                                    <VisibilityIcon sx={{ color: '#ffffff', width: '35px', height: '35px' }} />
+                                </Box>
+                        }
+                        {
+                            loadFlag && 
+                                <Box
+                                    onClick={() => handleGoPlayPreview(ROOM_PLAY_MESSAGE)}
+                                >
+                                    <PlayArrowIcon sx={{ color: '#ffffff', width: '35px', height: '35px' }} />
+                                </Box>
+                        }
                         <Stack direction="row" spacing={2}>
                             {/* <IconBell style={{ color: '#FFFFFF', width: '35px', height: '35px' }} /> */}
                             <img
